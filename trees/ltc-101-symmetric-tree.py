@@ -9,27 +9,26 @@ class Node:
         self.left = None
         self.right = None
 
+# original solution
+class Solution:
 
-# # original solution
-# class Solution:
-#
-#     def is_symmetric(self, root: Node) -> bool:
-#
-#         ans = []
-#
-#         def helper(root, level):
-#             if not root:
-#                 return
-#             else:
-#                 helper(root.left, level + 1)
-#                 ans.append(str(root.val) + '#' + str(level))
-#                 helper(root.right, level + 1)
-#
-#         helper(root, 0)
-#
-#         print(ans)
-#
-#         return all(ans[i] == ans[~i] for i in range(len(ans)//2))
+    def is_symmetric(self, root: Node) -> bool:
+
+        ans = []
+
+        def helper(root, level):
+            if not root:
+                return
+            else:
+                helper(root.left, level + 1)
+                ans.append(str(root.val) + '#' + str(level))
+                helper(root.right, level + 1)
+
+        helper(root, 0)
+
+        print(ans)
+
+        return all(ans[i] == ans[~i] for i in range(len(ans)//2))
 
 
 class Solution:
