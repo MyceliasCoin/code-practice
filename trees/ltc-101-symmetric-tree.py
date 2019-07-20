@@ -9,6 +9,7 @@ class Node:
         self.left = None
         self.right = None
 
+
 # # original solution
 # class Solution:
 #
