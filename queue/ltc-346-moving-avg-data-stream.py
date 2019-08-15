@@ -15,10 +15,15 @@ class Solution:
         :param val: int
         :return: float
         """
+        # if queue length is equal to max size of queue, decrement sum and pop from queue
         if len(self.lst) >= self.size:
             self.sum -= self.lst.pop(0)
+
+        # append new value to queue and increment sum
         self.lst.append(val)
         self.sum += val
+
+        # return queue average
         return self.sum / len(self.lst)
 
 
